@@ -1,12 +1,33 @@
 <%- include("partials/header"); -%>
     <h1>Compose</h1>
-    <form action="/compose" method="post">
+    <form onsubmit="addNewLine();" action="/compose" method="post">
         <div class="form-group">
             <label>Title</label>
             <input type="text" class="form-control" name="postTitle">
             <label>Post</label>
-            <textarea class="form-control" name = "postBody" rows="5" cols = "30" ></textarea>
+            <textarea style="white-space: pre-wrap;" class="form-control" name="postBody" rows="5" cols="30"
+                wrap="physical" id='userFied'></textarea>
+
+            <label for="exampleInputEmail1" class="form-label" name>Email address</label>
+            <input type="email" class="form-control" name="emailAddress" aria-describedby="emailHelp">
+
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="exampleInputPassword1">
         </div>
-        <button type="submit" class="btn btn-primary" name = "button">Publish</button>
+        <button type="submit" class="btn btn-primary" name="button" value="publish">Publish</button>
     </form>
+
+    <script>
+        function addNewLine() {
+            // text = document.getElementById('userFied').value;
+            // text = text.replace(/ /g, "[sp][sp]");
+            // text = text.replace(/\n/g, "[nl]");
+            // document.getElementById('userFied').value = text;
+            // console.log("new line added");
+            var textarea = document.querySelector('userFied');
+            textarea.value = textarea.value + "\r\n";
+
+        }
+    </script>
+
     <%- include("partials/footer"); -%>

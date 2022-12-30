@@ -40,3 +40,9 @@ html {
     font-size: 12px;
     color: #fff;
 }
+
+.delete-button {
+    border-radius: 50%;
+    border-width: 0px;
+    
+}

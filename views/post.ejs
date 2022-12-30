@@ -7,7 +7,29 @@
     <p>
         <%=content%>
     </p>
+    <% if(check==1){%>
+        <form method="POST" action="/posts/<%=id%>">
+            <button type="submit" class="btn btn-sm btn-danger" style="color: white;" name="button" value=<%=email %>>
+
+                Delete
+
+            </button>
+
+
+        </form>
+        <%}%>
+            <!-- <form method="GET" action="/update">
+        <button type="submit" href="/update" class="btn btn-sm btn-danger" style="color: white;" name="button"
+            value="update" formmethod="GET">
+
+            Update
+
+        </button>
+    </form> -->
 
 
 
-    <%- include("partials/footer"); -%>
+
+
+
+            <%- include("partials/footer"); -%>
